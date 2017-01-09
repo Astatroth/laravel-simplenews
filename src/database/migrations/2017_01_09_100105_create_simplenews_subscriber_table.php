@@ -13,7 +13,17 @@ class CreateSimplenewsSubscriberTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('simplenews_subscribers', function (Blueprint $table) {
+            $table->increments('snid')->unsgined();
+            $table->tinyInteger('activated')->unsigned()->default(0);
+            $table->string('mail', 100);
+            $table->integer('uid')->unsgined();
+            $table->string('language', 12);
+            $table->integer('timestamp');
+            $table->text('changes');
+
+            $table->timestamps();
+        });
     }
 
     /**
