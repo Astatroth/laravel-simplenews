@@ -17,7 +17,7 @@ class CreateSimplenewsSubscriberTable extends Migration
             $table->increments('snid')->unsgined();
             $table->tinyInteger('activated')->unsigned()->default(0);
             $table->string('mail', 100);
-            $table->integer('uid')->unsgined();
+            $table->integer('user_id')->unsgined();
             $table->string('language', 12);
             $table->integer('timestamp');
             $table->text('changes');
